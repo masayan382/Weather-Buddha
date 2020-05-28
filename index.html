@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <title>大仏天気</title>
+  <link rel="preconnect dns-prefetch" href="//openweathermap.org/img/w/">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+
+  <link href="slick/slick-theme.css" rel="stylesheet" type="text/css">
+  <link href="slick/slick.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header class="l-header">
+    <h1>大仏<span><img src="img/daibutu_s.svg" hspace="5" class="main-img"></span>天気</h1>
+    <div class="subtitle">〜大仏様の上空を調べよう〜</div>
+  </header>
+
+  <section id="slider">
+    <ul class="slider">
+      <li><a href="#"><img src="img/nara2.jpg"></a></li>
+      <li><a href="#"><img src="img/gifu2.jpg"></a></li>
+      <li><a href="#"><img src="img/kamakura2.jpg"></a></li>
+      <li><a href="#"><img src="img/kobe1.jpg"></a></li>
+      <li><a href="#"><img src="img/tokyo2.jpg" width="640px" height="426px"></a></li>
+      <li><a href="#"><img src="img/nara3.jpg"></a></li>
+      <li><a href="#"><img src="img/gifu3.jpg"></a></li>
+      <li><a href="#"><img src="img/kamakura3.jpg"></a></li>
+      <li><a href="#"><img src="img/kobe2.jpg"></a></li>
+      <li><a href="#"><img src="img/tokyo3.jpg" width="640px" height="426px"></a></li>
+    </ul>
+  </section>
+
+
+  <section id="serch">
+    <form>
+      <div class="selectbox">
+        <div class="micro">＼ ココをクリック ／</div>
+        <select name="spot" id="spot">
+          <option value="" hidden>ここから大仏様を選んでください</option>
+          <option value="itabashi">東京大仏</option>
+          <option value="kamakura">鎌倉大仏</option>
+          <option value="nara">奈良大仏</option>
+          <option value="gifu">岐阜大仏</option>
+          <option value="kobe">神戸大仏</option>
+        </select>
+      </div>
+    </form>
+    <div>
+      <button id="btn">天気を調べる</button>
+    </div>
+  </section>
+
+
+  <section id="result">
+    <table class="res-tb">
+      <tr>
+        <th>大仏名</th>
+        <td>
+          <div id="daibutu"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>画像</th>
+        <td>
+          <div id="photo"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>寺院名</th>
+        <td>
+          <div id="temple"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>
+          <div id="location"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>地図</th>
+        <td>
+          <div id="map" style="height: 400px; width: 100%;"></div>
+        </td>
+      </tr>
+      <tr>
+        <th>天気</th>
+        <td>
+          <span id="weatherMark"></span><br>
+          <span id="description"></span>
+        </td>
+      </tr>
+      <tr>
+        <th>気温</th>
+        <td><span id="temp"></span> ℃</td>
+      </tr>
+      <tr class="last">
+        <th>湿度</th>
+        <td><span id="humidity"></span> %</td>
+      </tr>
+    </table>
+  </section>
+
+  <footer>
+    Copyright © 大仏天気
+  </footer>
+  <script src="https://maps.googleapis.com/maps/api/js?key=○○○" async
+    defer></script>
+  <script src="weather.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,279 @@
+// マップ型変数
+$breakpoints: (
+	'sm': 'screen and (max-width: 414px)',
+	'md': 'screen and (max-width: 768px)',
+	'lg': 'screen and (max-width: 992px)',
+	'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+// ==============================
+// mixin
+// ==============================
+@mixin mq($breakpoint: lg) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+// ==============================
+// reset
+// ==============================
+
+// ==============================
+// base
+// ==============================
+
+html {
+	font-size: 62.5%;
+	line-height: 1.6;
+}
+
+// ==============================
+// layout
+// ==============================
+body {
+	width: 100%;
+	background: #fbfbfb;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.l-header {
+	width: 100%;
+	margin: 0 auto;
+	padding-top: 10px;
+	text-align: center;
+	background-color: #ffc93c;
+}
+
+#slider {
+	width: 100%;
+	pointer-events: none;
+	margin-bottom: 30px;
+}
+
+footer {
+	width: 100%;
+	height: 40px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 10px;
+	font-size: small;
+	background: #000;
+	color: #fff;
+}
+
+#serch {
+	width: 980px;
+	background: #fff;
+	margin: 30px auto;
+	padding: 50px 0px;
+	border: 3px solid #eee;
+	font-size: 1.6rem;
+	text-align: center;
+	@include mq(lg) {
+		width: 100%;
+	}
+}
+
+#result {
+	display: none;
+	width: 980px;
+	background: #fff;
+	margin: 50px auto;
+	padding: 50px 0px;
+	font-size: 1.6rem;
+	text-align: center;
+	@include mq(lg) {
+		width: 100%;
+	}
+}
+
+#result.active {
+	display: block;
+}
+
+table {
+	margin: 20px auto;
+	max-width: 980px;
+}
+.res-tb th {
+	background: #668ad8;
+	border: solid 1px #ccc;
+	color: #fff;
+	padding: 10px;
+	vertical-align: middle;
+	min-width: 100px;
+}
+.res-tb td {
+	border: solid 1px #ccc;
+	padding: 10px;
+	vertical-align: middle;
+}
+
+@include mq(lg) {
+	.last td:last-child {
+		border-bottom: solid 1px #ccc;
+		width: 100%;
+	}
+	.res-tb {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+	.res-tb th,
+	.res-tb td {
+		border-bottom: none;
+		display: block;
+		width: 100%;
+	}
+}
+
+// ==============================
+// module
+// ==============================
+h1 {
+	font-size: 3.5rem;
+	margin: 10px auto;
+	letter-spacing: 0.1em;
+}
+
+h2 {
+	font-size: 2.5rem;
+	background-color: #668ad8;
+	color: #fff;
+	margin: 0 auto;
+	padding: 20px 0;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+.selectbox {
+	width: 90%;
+	margin: 1em auto;
+	position: relative;
+}
+select {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 80%;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	font-size: 1.6rem;
+	border: #ccc 2px solid;
+	border-radius: 0;
+	background: #fff;
+	cursor: pointer;
+}
+.selectbox::after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	right: 15%;
+	top: 60%;
+	border-bottom: #333 2px solid;
+	border-right: #333 2px solid;
+	transform: rotate(45deg) translateY(-30%);
+	pointer-events: none;
+}
+
+.subtitle {
+	margin: 0px auto;
+	padding: 10px;
+	font-size: 1.6rem;
+}
+// ==============================
+// state
+// ==============================
+
+// ==============================
+// theme
+// ==============================
+
+// ==============================
+// Utility
+// ==============================
+.main-img {
+	width: 60px;
+	height: 60px;
+	vertical-align: middle;
+}
+
+.photo {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+}
+
+.slider {
+	width: 90%;
+	margin: 10px auto 10px;
+	margin-bottom: 30px;
+}
+.slider img {
+	height: auto;
+	width: 100%;
+	font-weight: bold;
+}
+/*slick setting*/
+// .slick-prev:before,
+// .slick-next:before {
+// 	color: #000;
+// }
+
+// .slick-prev {
+// 	left: 0px;
+// }
+// .slick-next {
+// 	right: -30px;
+// }
+
+// .slick-dotted.slick-slider {
+// 	margin-right: 6%;
+// 	@include mq(sm) {
+// 		margin-right: 9.5%;
+// 	}
+// }
+
+.micro {
+	font-size: 1.4rem;
+	color: #ccc;
+}
+
+#btn {
+	display: block;
+	border: none;
+	cursor: pointer;
+	font-size: 1.6rem;
+	margin: 0 auto;
+	padding: 15px 40px;
+	border-radius: 8px;
+	box-sizing: border-box;
+	color: #fff;
+	text-align: center;
+	text-decoration: inherit;
+	background: #668ad8;
+	box-shadow: 0 6px 0 #627295;
+	transition: color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+#btn:hover {
+	background: #668ad8;
+	box-shadow: 0 2px 0 #627295;
+	transform: translateY(4px);
+}
+
+button:focus {
+	outline: 0;
+}
+
+// ==============================
+// Google Map
+// ==============================
+// #map {
+// 	height: 400px;
+// 	width: 100%;
+// }
